@@ -15,6 +15,31 @@ only, and it is **not** meant to be used for production.*
 * [Example]()
   * [Example variant]()
 
+## How to use this repository
+Create virtual environment (recommended)
+```bat
+$ python -m venv .venv
+```
+Activate virtual environment
+```bat
+$ .venv/Scripts/activate
+```
+Install packages
+```bat
+$ pip install -e src/
+```
+Run all tests (with verbose output `-v`)
+```bat
+$ python -m unittest discover -v
+```
+Run specific test (you can also run the test file `$ python test_file.py`)
+```bat
+$ python -m unittest tests.test_algorithms_sorting_bubble_sort
+```
+Use pattern to match test files `-p`
+```bat
+$ python -m unittest discover -v -p *sort*
+```
 ## Additional Information
 
 ### Big O Notation

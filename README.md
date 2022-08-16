@@ -12,8 +12,8 @@ only, and it is **not** meant to be used for production.*
 
 ## Algorithms
 
-* [Example]()
-  * [Example variant]()
+* [Sorting](src/algorithms/sorting/)
+  * [Bubble sort](src/algorithms/sorting/bubble_sort)
 
 ## How to use this repository
 Create virtual environment (recommended)

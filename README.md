@@ -7,8 +7,8 @@ only, and it is **not** meant to be used for production.*
 
 ## Data Structures
 
-* [Example]()
-  * [Example variant]()
+* Linked List
+  * [Singly Linked List](src/data_structures/linked_list)
 
 ## Algorithms
 

@@ -5,5 +5,5 @@ setup(name='DSA',
       description='Data Structures & Algorithms',
       author='Adrian Olczak',
       author_email='adrianolczakdev@gmail.com',
-      packages=['algorithms', 'data-structures']
+      packages=['algorithms', 'data_structures']
 )

@@ -20,13 +20,21 @@ Create virtual environment (recommended)
 ```bat
 $ python -m venv .venv
 ```
-Activate virtual environment
+Activate virtual environment (Windows)
 ```bat
-$ .venv/Scripts/activate
+$ .venv\Scripts\activate
 ```
-Install packages
+Activate virtual environment (Linux)
+```batch
+$ source ./.venv/bin/activate
+```
+Install dependency
 ```bat
-$ pip install -e src/
+$ pip install -r requirements.txt
+```
+Install dev dependency
+```bat
+$ pip install -r requirements_dev.txt
 ```
 Run all tests (with verbose output `-v`)
 ```bat
@@ -40,6 +48,8 @@ Use pattern to match test files `-p`
 ```bat
 $ python -m unittest discover -v -p *sort*
 ```
+___
+If you have a `make` program, you can also use the commands defined in the `Makefile`, but first set the `VENV` variable pointing to your virtual environment.
 ## Additional Information
 
 ### Big O Notation

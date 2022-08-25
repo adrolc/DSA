@@ -1,16 +1,26 @@
 from typing import Any, Generator
 
+
 class Node:
-    def __init__(self, data: Any) -> None:
-        self.data = data
-        self.next = None
+    """
+    Node of Singly Linked List.
+    Contains any type of data and a pointer to the next node
+    """
+
+    # pylint: disable=too-few-public-methods
+
+    def __init__(self, data: Any):
+        self.data: Any = data
+        self.next: Node | None = None
 
     def __repr__(self) -> str:
         return repr(self.data)
 
 
 class LinkedList:
-    def __init__(self, data: list[Any]=None):
+    """Singly Linked List"""
+
+    def __init__(self, data: list[Any] = None):
         self.head: Node | None = None
         self.tail: Node | None = None
         self.length: int = 0
@@ -19,8 +29,8 @@ class LinkedList:
             node = Node(data=data.pop(0))
             self.head = node
 
-            for d in data:
-                node.next = Node(data=d)
+            for item in data:
+                node.next = Node(data=item)
                 node = node.next
             self.tail = node
 
@@ -37,21 +47,21 @@ class LinkedList:
         return self.length
 
     def __getitem__(self, index: int) -> Any:
-        if index > -1 and index < len(self):
+        if -1 < index < len(self):
             for i, node_data in enumerate(self):
                 if i == index:
                     return node_data
         raise IndexError("List index out of range")
 
     def __setitem__(self, index: int, data: Any) -> None:
-        if index > -1 and index < len(self):
+        if -1 < index < len(self):
             node = self.head
             for _ in range(index):
-                node = node.next
-            node.data = data
+                node = node.next  # type: ignore
+            node.data = data  # type: ignore
             return None
         raise IndexError("List index out of range")
-    
+
     def __contains__(self, data: Any) -> bool:
         for node_data in self:
             if node_data == data:
@@ -74,7 +84,7 @@ class LinkedList:
             self.head = self.tail = Node(data=data)
         else:
             new_node = Node(data=data)
-            self.tail.next = new_node
+            self.tail.next = new_node  # type: ignore
             self.tail = new_node
         self.length += 1
 
@@ -94,18 +104,17 @@ class LinkedList:
             if self.head.data == target:
                 self.insert_front(data)
                 return
-            else:
-                prev_node = self.head
-                current_node = self.head.next
-                while current_node:
-                    if current_node.data == target:
-                        new_node = Node(data=data)
-                        new_node.next = prev_node.next
-                        prev_node.next = new_node
-                        self.length += 1
-                        return
-                    prev_node = current_node
-                    current_node = current_node.next
+            prev_node = self.head
+            current_node = self.head.next
+            while current_node:
+                if current_node.data == target:
+                    new_node = Node(data=data)
+                    new_node.next = prev_node.next
+                    prev_node.next = new_node
+                    self.length += 1
+                    return
+                prev_node = current_node
+                current_node = current_node.next
         raise KeyError(f"{repr(target)} does not exist")
 
     def insert_after(self, target: Any, data: Any) -> None:
@@ -116,12 +125,11 @@ class LinkedList:
                 if current_node == self.tail:
                     self.insert(data)
                     return
-                else:
-                    new_node = Node(data=data)
-                    new_node.next = current_node.next
-                    current_node.next = new_node
-                    self.length += 1
-                    return
+                new_node = Node(data=data)
+                new_node.next = current_node.next
+                current_node.next = new_node
+                self.length += 1
+                return
             current_node = current_node.next
         raise KeyError(f"{repr(target)} does not exist")
 
@@ -159,11 +167,11 @@ class LinkedList:
 
     def remove(self, target: Any) -> None:
         """Remove specified node"""
-        if self.head.data == target:
+        if self.head and self.head.data == target:
             self.remove_first()
             return
 
-        if self.tail.data == target:
+        if self.tail and self.tail.data == target:
             self.remove_last()
             return
 
@@ -180,16 +188,16 @@ class LinkedList:
     def reverse(self) -> None:
         """Reverse the list in-place"""
         if self.head and self.head.next:
-            reversedList = None
-            next = None
-            currentNode = self.head
+            reversed_list: Node | None = None
+            next_node: Node | None = None
+            current_node: Node | None = self.head
             self.tail = self.head
-            while currentNode:
-                next = currentNode.next
-                currentNode.next = reversedList
-                reversedList = currentNode
-                currentNode = next
-            self.head = reversedList
+            while current_node:
+                next_node = current_node.next
+                current_node.next = reversed_list
+                reversed_list = current_node
+                current_node = next_node
+            self.head = reversed_list
 
     def find(self, data: Any) -> int:
         """Find index by node value"""

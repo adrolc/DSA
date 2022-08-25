@@ -1,0 +1,4 @@
+-e src/
+pylint>=2.14.5
+mypy>=0.971
+black>=22.6.0

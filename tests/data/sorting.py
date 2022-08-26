@@ -1,4 +1,3 @@
-
 sorting_data = {
     "positive_numbers": [nums := [7, 4, 1, 2, 12, 10, 3, 5], sorted(nums)],
     "negative_numbers": [nums := [-1, -3, -12, -5, -7, -2], sorted(nums)],

@@ -14,6 +14,7 @@ only, and it is **not** meant to be used for production.*
 
 * [Sorting](src/algorithms/sorting/)
   * [Bubble sort](src/algorithms/sorting/bubble_sort)
+  * [Merge sort](src/algorithms/sorting/merge_sort)
 
 ## How to use this repository
 Create virtual environment (recommended)

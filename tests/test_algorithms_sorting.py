@@ -1,6 +1,6 @@
 import unittest
 
-from data.sorting import sorting_data
+from data.sorting_data import sorting_data
 from algorithms.sorting.bubble_sort.bubble_sort import bubble_sort
 from algorithms.sorting.merge_sort.merge_sort import merge_sort
 
@@ -8,19 +8,21 @@ from algorithms.sorting.merge_sort.merge_sort import merge_sort
 class TestBubbleSort(unittest.TestCase):
     pass
 
+
 class TestMergeSort(unittest.TestCase):
     pass
+
 
 algorithms = [
     {
         "test_class": TestBubbleSort,
         "method_prefix": "test_bubble_sort",
-        "function": bubble_sort
+        "function": bubble_sort,
     },
     {
         "test_class": TestMergeSort,
         "method_prefix": "test_merge_sort",
-        "function": merge_sort
+        "function": merge_sort,
     },
 ]
 # Dynamically generated test methods.
@@ -38,7 +40,9 @@ def add_method(cls, func, name, data):
 for test_name, test_data in sorting_data.items():
     for algorithm in algorithms:
         method_name = f"{algorithm['method_prefix']}_{test_name}"
-        add_method(algorithm["test_class"], algorithm["function"], method_name, test_data)
+        add_method(
+            algorithm["test_class"], algorithm["function"], method_name, test_data
+        )
 
 
 if __name__ == "__main__":

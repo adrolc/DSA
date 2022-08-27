@@ -28,8 +28,8 @@ checklist: lint typehint test
 
 .PHONY: black
 black:
-	$(BIN)/black -l 79 src/**/*.py
-	$(BIN)/black -l 99 tests/**/*.py
+	$(BIN)/black -l 79 src/
+	$(BIN)/black -l 99 tests/
 
 .PHONY: clean
 clean:

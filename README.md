@@ -15,6 +15,7 @@ only, and it is **not** meant to be used for production.*
 * [Sorting](src/algorithms/sorting/)
   * [Bubble sort](src/algorithms/sorting/bubble_sort)
   * [Merge sort](src/algorithms/sorting/merge_sort)
+  * [Selection sort](src/algorithms/sorting/selection_sort)
 * [Searching](src/algorithms/searching/)
   * [Binary search](src/algorithms/searching/binary_search)
 
@@ -41,14 +42,17 @@ $ pip install -r requirements_dev.txt
 ```
 Run all tests (with verbose output `-v`)
 ```bat
+$ cd tests/
 $ python -m unittest discover -v
 ```
 Run specific test (you can also run the test file `$ python test_file.py`)
 ```bat
-$ python -m unittest tests.test_algorithms_sorting_bubble_sort
+$ cd tests/
+$ python -m unittest test_algorithms_sorting.TestMergeSort
 ```
 Use pattern to match test files `-p`
 ```bat
+$ cd tests/
 $ python -m unittest discover -v -p *sort*
 ```
 ___

@@ -3,13 +3,17 @@ import unittest
 from data.sorting_data import sorting_data
 from algorithms.sorting.bubble_sort.bubble_sort import bubble_sort
 from algorithms.sorting.merge_sort.merge_sort import merge_sort
+from algorithms.sorting.selection_sort.selection_sort import selection_sort
+
 
 
 class TestBubbleSort(unittest.TestCase):
     pass
 
-
 class TestMergeSort(unittest.TestCase):
+    pass
+
+class TestSelectionSort(unittest.TestCase):
     pass
 
 
@@ -23,6 +27,11 @@ algorithms = [
         "test_class": TestMergeSort,
         "method_prefix": "test_merge_sort",
         "function": merge_sort,
+    },
+    {
+        "test_class": TestSelectionSort,
+        "method_prefix": "test_selection_sort",
+        "function": selection_sort,
     },
 ]
 # Dynamically generated test methods.

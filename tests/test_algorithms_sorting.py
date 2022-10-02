@@ -6,12 +6,13 @@ from algorithms.sorting.merge_sort.merge_sort import merge_sort
 from algorithms.sorting.selection_sort.selection_sort import selection_sort
 
 
-
 class TestBubbleSort(unittest.TestCase):
     pass
 
+
 class TestMergeSort(unittest.TestCase):
     pass
+
 
 class TestSelectionSort(unittest.TestCase):
     pass
@@ -49,9 +50,7 @@ def add_method(cls, func, name, data):
 for test_name, test_data in sorting_data.items():
     for algorithm in algorithms:
         method_name = f"{algorithm['method_prefix']}_{test_name}"
-        add_method(
-            algorithm["test_class"], algorithm["function"], method_name, test_data
-        )
+        add_method(algorithm["test_class"], algorithm["function"], method_name, test_data)
 
 
 if __name__ == "__main__":

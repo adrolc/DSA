@@ -14,3 +14,13 @@ The Levenshtein distance between `kitten` and `sitting` is 3, since the followin
 1. kitten → sitten (substitution of "s" for "k"),
 2. sitten → sittin (substitution of "i" for "e"),
 3. sittin → sitting (insertion of "g" at the end).
+
+
+*source:* [Wikipedia](https://en.wikipedia.org/wiki/Levenshtein_distance)
+
+
+# Complexity
+
+| Algorithm            | Best     | Average  | Worst    | Space |
+|----------------------|----------|----------|----------|-------|
+| Levenshtein distance | Ω(m * n) | Θ(m * n) | O(m * n) | O(m)  |

@@ -18,6 +18,8 @@ only, and it is **not** meant to be used for production.*
   * [Selection sort](src/algorithms/sorting/selection_sort)
 * [Searching](src/algorithms/searching/)
   * [Binary search](src/algorithms/searching/binary_search)
+* [Strings](src/algorithms/strings/)
+  * [Levenshtein distance](src/algorithms/strings/levenshtein_distance/)
 
 ## How to use this repository
 Create virtual environment (recommended)
